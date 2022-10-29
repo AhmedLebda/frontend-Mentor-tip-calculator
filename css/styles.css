@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,700&display=swap");
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --font-spacemono: "Space Mono", monospace;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+input,
+button,
+img,
+label {
+  font-family: var(--font-spacemono);
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--light-grayish-cyan);
+  font-family: var(--font-spacemono);
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: 450px;
+}
+
+.logo {
+  margin: 1.6rem auto 3rem;
+}
+.calc-wrapper {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+.calc-options label,
+.calc-options p {
+  color: var(--dark-grayish-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.main-input {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.main-input input {
+  width: 100%;
+  padding: 0.2rem 1rem;
+  font-size: 1.6rem;
+  text-align: right;
+  outline: none;
+  color: var(--very-dark-cyan);
+  border: none;
+  border-radius: 5px;
+  background-color: var(--very-light-grayish-cyan);
+}
+.main-input input:focus {
+  border: 2px solid var(--strong-cyan);
+}
+
+.main-input img {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+.tip-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-main {
+  padding: 0.5rem;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1.3rem;
+}
+button.btn-main {
+  cursor: pointer;
+}
+button.btn-main.active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+input.btn-main {
+  color: var(--very-dark-cyan);
+  background-color: var(--very-light-grayish-cyan);
+}
+label[for="people"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* JS Classes */
+.error-msg {
+  color: rgb(253, 105, 105);
+  font-size: 0.7rem;
+}
+.input-error {
+  border: 2px solid rgb(253, 105, 105) !important;
+}
+button.btn-main.active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.result {
+  background-color: var(--very-dark-cyan);
+  padding: 1rem;
+  border-radius: 0.8rem;
+}
+.tip-amount-wrapper,
+.total-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+.tip-amount,
+.total {
+  color: var(--strong-cyan);
+  font-size: 1.8rem;
+}
+
+.tip-amount-wrapper span,
+.total-wrapper span {
+  color: var(--grayish-cyan);
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.result button {
+  width: 100%;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.result button:active {
+  background-color: hsl(171.8, 85.1%, 47.3%);
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    margin-top: 5rem;
+    max-width: 900px;
+  }
+  .calc-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .result {
+    position: relative;
+  }
+  .tip-amount-wrapper {
+    margin-top: 1rem;
+  }
+  .result button {
+    position: absolute;
+    bottom: 1.5rem;
+    width: calc(100% - 2rem);
+  }
+}
